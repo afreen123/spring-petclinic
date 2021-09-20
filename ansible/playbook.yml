@@ -5,6 +5,10 @@
       copy:
         src: /mnt/artefact/*.jar
         dest: /tmp
+    - name:  copy another files
+      copy:
+        src: /var/lib/jenkins/workspace/build-job/ansible/*
+        dest: /tmp      
     - name: docker
       shell: docker-compose -f /tmp/docker-compose.yml up -d
              java -Dspring.profiles.active=mysql -jar /tmp/spring-petclinic-2.5.0-SNAPSHOT.jar &
