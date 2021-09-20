@@ -3,7 +3,7 @@
   tasks:
     - name: copy files
       copy:
-        src: /mnt/artefact/*.jar
+        src: /mnt/artefact/spring-petclinic-2.5.0-SNAPSHOT.jar
         dest: /tmp
     - name:  copy another files
       copy:
