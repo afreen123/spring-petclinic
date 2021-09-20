@@ -1,6 +1,19 @@
 version: '3.3'
 services:
-  mysql:
+  web:
+      container_name: spring
+      build:
+        context: .
+        dockerfile: Dockerfile
+      restart: always
+      depends_on:
+        - mysql-server
+      ports:
+        - 8081:8081
+      networks:
+        - conti-test
+
+  mysql-server:
     image: mysql:5.7
     command: --init-file /data/application/init.sql
     volumes: 
@@ -12,4 +25,9 @@ services:
       - MYSQL_USER=petclinic
       - MYSQL_PASSWORD=petclinic
       - MYSQL_DATABASE=petclinic
+    networks:
+      - conti-test
 
+networks:
+  conti-test:
+    driver: bridge
