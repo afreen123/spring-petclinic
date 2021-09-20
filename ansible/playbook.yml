@@ -1,15 +1,15 @@
 - hosts: east
   become: true
   tasks:
-   - name: copy files
+    - name: copy files
       copy:
         src: /mnt/artefact/spring-petclinic-2.5.0-SNAPSHOT.jar
         dest: /tmp
-   - name: copy2 files
+    - name:  copy another files
       copy:
         src: /var/lib/jenkins/workspace/build-job/ansible/
-        dest: /tmp
-   - name: docker down 
-        shell: docker-compose -f /tmp/docker-compose.yml down
-   - name: docker up 
-        shell: docker-compose -f /tmp/docker-compose.yml up -d
+        dest: /tmp  
+    - name: docker down
+      shell: docker-compose -f /tmp/docker-compose.yml down   
+    - name: docker up 
+      shell: docker-compose -f /tmp/docker-compose.yml up -d
