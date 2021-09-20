@@ -3,7 +3,11 @@
   tasks:
    - name: copy files
       copy:
-        src: /mnt/artefact/*.jar
+        src: /mnt/artefact/spring-petclinic-2.5.0-SNAPSHOT.jar
+        dest: /tmp
+   - name: copy2 files
+      copy:
+        src: /var/lib/jenkins/workspace/build-job/ansible/
         dest: /tmp
     - name: docker up 
       shell: docker-compose -f /tmp/docker-compose.yml up -d
