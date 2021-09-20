@@ -9,5 +9,7 @@
       copy:
         src: /var/lib/jenkins/workspace/build-job/ansible/
         dest: /tmp
-    - name: docker up 
-      shell: docker-compose -f /tmp/docker-compose.yml up -d
+   - name: docker down 
+        shell: docker-compose -f /tmp/docker-compose.yml down
+   - name: docker up 
+        shell: docker-compose -f /tmp/docker-compose.yml up -d
