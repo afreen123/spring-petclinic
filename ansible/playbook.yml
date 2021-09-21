@@ -12,6 +12,6 @@
     - name: docker down
       shell: docker-compose -f /tmp/docker-compose.yml down
     - name: docker build 
-      shell: docker-compose -f /home/ubuntu/docker-compose.yml build
+      shell: docker-compose -f /tmp/docker-compose.yml build
     - name: docker up 
       shell: docker-compose -f /tmp/docker-compose.yml up -d
