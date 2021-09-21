@@ -10,6 +10,8 @@
         src: /var/lib/jenkins/workspace/build-job/ansible/
         dest: /tmp  
     - name: docker down
-      shell: docker-compose -f /tmp/docker-compose.yml down   
+      shell: docker-compose -f /tmp/docker-compose.yml down
+    - name: docker build 
+      shell: docker-compose -f /home/ubuntu/docker-compose.yml build
     - name: docker up 
       shell: docker-compose -f /tmp/docker-compose.yml up -d
