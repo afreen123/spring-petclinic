@@ -14,7 +14,7 @@ services:
         - conti-test
 
   mysql-server:
-    image: mysql:5.7
+    image: mysql:5.6
     command: --init-file /data/application/init.sql
     volumes: 
       - ./application/init.sql:/data/application/init.sql
